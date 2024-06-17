@@ -2,10 +2,13 @@ import streamlit as st
 import home
 import patients
 import doctors
+import pharmacy
+import administrators
+import about
 
 def main():
     st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Go to", ["Home", "Patients", "Doctors", "Pharmacy", "About", "Code Snippets"])
+    page = st.sidebar.radio("Go to", ["Home", "Patients", "Doctors", "Pharmacy", "Administrators", "About", "Code Snippets"])
 
     if page == "Home":
         home.show_home_page()
@@ -14,9 +17,11 @@ def main():
     elif page == "Doctors":
         doctors.show_doctors_page()
     elif page == "Pharmacy":
-        st.write("Pharmacy Page")
+        pharmacy.show_pharmacy_page()
+    elif page == "Administrators":
+        administrators.show_administrator_page()
     elif page == "About":
-        st.write("About the Database")
+        about.show_about_page()
     elif page == "Code Snippets":
         st.write("Code Snippets")
 
